@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageReleaseNotes>fix namespacing</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/bali-ibrahim/Dapper.Contrib.Extensions.Tablename</RepositoryUrl>
     <Description>Add tablenames from configuration.</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Company />
     <Authors>İbrahim Bali</Authors>

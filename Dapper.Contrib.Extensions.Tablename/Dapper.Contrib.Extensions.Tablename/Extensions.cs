@@ -3,15 +3,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace Dapper.Contrib.Extensions
+namespace Dapper.Contrib.Extensions.Tablename
 {
-    public static class Tablename
+    public static class TablenameExtensions
     {
-        private static TableNameConfig _config;
+        private static TablenameConfig _config;
         public static void ReadTablenamesFromConfig(this IServiceCollection services, IConfigurationSection configSection)
         {
-            services.Configure<TableNameConfig>(configSection);
-            _config = configSection.Get<TableNameConfig>();
+            services.Configure<TablenameConfig>(configSection);
+            _config = configSection.Get<TablenameConfig>();
             SqlMapperExtensions.TableNameMapper = TableName;
         }
 
