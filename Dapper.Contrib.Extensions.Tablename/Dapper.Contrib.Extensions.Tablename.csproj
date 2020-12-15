@@ -6,6 +6,8 @@
     <RepositoryUrl>https://github.com/bali-ibrahim/Dapper.Contrib.Extensions.Tablename</RepositoryUrl>
     <Description>Add tablenames from configuration.</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
