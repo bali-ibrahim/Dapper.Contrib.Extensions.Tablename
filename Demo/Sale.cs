@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Demo
+﻿namespace Demo
 {
     //[Table("sale_2020")]
     public class Sale

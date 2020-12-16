@@ -1,4 +1,4 @@
-﻿using Dapper.Contrib.Extensions;
+﻿using Dapper.Contrib.Extensions.Tablename;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 
@@ -8,7 +8,6 @@ namespace Demo
     {
         public static int Main(string[] args)
         {
-
             try
             {
                 CreateHostBuilder(args).Build().Run();
