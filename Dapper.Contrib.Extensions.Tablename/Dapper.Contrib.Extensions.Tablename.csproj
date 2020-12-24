@@ -2,22 +2,23 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <PackageReleaseNotes>refactor: remove whitelisting</PackageReleaseNotes>
+    <PackageReleaseNotes>fix: require connection for Tablename and quote by default</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/bali-ibrahim/Dapper.Contrib.Extensions.Tablename</RepositoryUrl>
     <Description>Add tablenames from configuration.</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <AssemblyVersion>1.0.0.3</AssemblyVersion>
-    <FileVersion>1.0.0.3</FileVersion>
-    <Version>1.0.5</Version>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
+    <Version>1.1.0</Version>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Company />
     <Authors>İbrahim Bali</Authors>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Connection.Identifier.Quoting" Version="1.0.2" />
     <PackageReference Include="Dapper.Contrib" Version="2.0.78" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.10" />
-    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.1.10" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>

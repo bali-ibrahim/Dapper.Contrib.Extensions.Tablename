@@ -1,7 +1,11 @@
-﻿using Dapper.Contrib.Extensions;
+﻿using Connection.Identifier.Quoting;
+using Dapper.Contrib.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Data;
+using System.Reflection;
+using SystemTableAttribute = System.ComponentModel.DataAnnotations.Schema.TableAttribute;
 
 namespace Dapper.Contrib.Extensions.Tablename
 {
@@ -12,12 +16,22 @@ namespace Dapper.Contrib.Extensions.Tablename
         {
             services.Configure<TablenameConfig>(configSection);
             _config = configSection.Get<TablenameConfig>();
-            SqlMapperExtensions.TableNameMapper = TableName;
+            SqlMapperExtensions.TableNameMapper = Tablename;
             return services;
         }
 
-        public static string TableName(Type type) => _config.TableNames[type.FullName];
+        private static string Tablename(Type type) => _config.TableNames[type.FullName];
 
-        public static string TableName<T>() => TableName(typeof(T));
+        public static string Tablename<T>(this IDbConnection connection)
+        {
+            var type = typeof(T);
+            var tableName = null
+                ?? type.GetCustomAttribute<TableAttribute>()?.Name
+                ?? type.GetCustomAttribute<SystemTableAttribute>()?.Name
+                ?? Tablename(type)
+            ;
+            tableName = tableName.QuoteIdentifier(connection);
+            return tableName;
+        }
     }
 }
