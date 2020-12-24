@@ -16,11 +16,11 @@ namespace Dapper.Contrib.Extensions.Tablename
         {
             services.Configure<TablenameConfig>(configSection);
             _config = configSection.Get<TablenameConfig>();
-            SqlMapperExtensions.TableNameMapper = Tablename;
+            SqlMapperExtensions.TableNameMapper = UnquotedTablename;
             return services;
         }
 
-        private static string Tablename(Type type) => _config.TableNames[type.FullName];
+        public static string UnquotedTablename(Type type) => _config.TableNames[type.FullName];
 
         public static string Tablename<T>(this IDbConnection connection)
         {
@@ -28,7 +28,7 @@ namespace Dapper.Contrib.Extensions.Tablename
             var tableName = null
                 ?? type.GetCustomAttribute<TableAttribute>()?.Name
                 ?? type.GetCustomAttribute<SystemTableAttribute>()?.Name
-                ?? Tablename(type)
+                ?? UnquotedTablename(type)
             ;
             tableName = tableName.QuoteIdentifier(connection);
             return tableName;

@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <PackageReleaseNotes>fix: require connection for Tablename and quote by default</PackageReleaseNotes>
+    <PackageReleaseNotes>feat: expose UnquotedTablename</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/bali-ibrahim/Dapper.Contrib.Extensions.Tablename</RepositoryUrl>
     <Description>Add tablenames from configuration.</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <AssemblyVersion>1.1.0.1</AssemblyVersion>
     <FileVersion>1.1.0.0</FileVersion>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Company />
     <Authors>İbrahim Bali</Authors>
